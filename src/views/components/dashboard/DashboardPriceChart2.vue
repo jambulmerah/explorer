@@ -6,10 +6,7 @@
           <h2 class="font-weight-bold">
             {{ coinInfo.name }} <span class="text-uppercase">({{ coinInfo.symbol }})</span>
           </h2>
-          <span
-            v-b-tooltip.hover.v-danger
-            title="Coingecko Rank"
-          >Coingecko Rank: <b-badge variant="light-danger">
+          <span>Coingecko Rank: <b-badge variant="light-danger">
             #{{ coinInfo.coingecko_rank }}
           </b-badge></span>
         </div>
@@ -36,30 +33,41 @@
               text="Pairs"
               :variant="color"
             >
-              <b-dropdown-item
-                v-for="(pair, i) in tickers"
-                :key="i"
-                @click="selectPair(pair)"
+              <b-dropdown-header>
+                <span class="text-primary font-weight-bolder">{{ tickers.length }}</span> pairs
+              </b-dropdown-header>
+              <vue-perfect-scrollbar
+                :settings="settings"
+                class="pair-scroll-area"
               >
-                <b-row style="width:400px;">
-                  <b-col cols="4">
-                    {{ pair.market.name }}
-                  </b-col>
-                  <b-col
-                    cols="4"
-                    class="text-uppercase text-truncate"
-                  >
-                    {{ coinInfo.symbol }}/{{ pair.target }}
-                  </b-col>
-                  <b-col
-                    cols="4"
-                    class="font-weight-bold"
-                    :class="`text-${colorMap(pair.trust_score)}`"
-                  >
-                    ${{ pair.converted_last.usd }}
-                  </b-col>
-                </b-row>
-              </b-dropdown-item>
+                <b-dropdown-item
+                  v-for="(pair, i) in tickers"
+                  :key="i"
+                  @click="selectPair(pair)"
+                >
+                  <b-row style="width:400px;">
+                    <b-col
+                      cols="4"
+                      class="text-truncate"
+                    >
+                      {{ pair.market.name }}
+                    </b-col>
+                    <b-col
+                      cols="4"
+                      class="text-uppercase text-truncate"
+                    >
+                      {{ coinInfo.symbol }}/{{ pair.target }}
+                    </b-col>
+                    <b-col
+                      cols="4"
+                      class="font-weight-bold"
+                      :class="`text-${colorMap(pair.trust_score)}`"
+                    >
+                      ${{ pair.converted_last.usd }}
+                    </b-col>
+                  </b-row>
+                </b-dropdown-item>
+              </vue-perfect-scrollbar>
             </b-dropdown>
             <div class="text-truncate ml-1">
               <sup class="text-body">
@@ -83,22 +91,22 @@
         </div>
       </b-col>
       <b-col md="8">
-        <b-card-header class="d-flex justify-content-between">
+        <b-card-header class="d-flex justify-content-between px-0">
           <!-- size -->
           <b-button-group
             size="sm"
           >
             <b-button
-              :variant="type==='prices'? 'primary': 'outline-primary'"
+              :variant="type==='prices'? 'secondary': 'outline-secondary'"
               @click="selectChart('prices')"
             >
               Price
             </b-button>
             <b-button
-              :variant="type !== 'prices'? 'primary': 'outline-primary'"
+              :variant="type !== 'prices'? 'secondary': 'outline-secondary'"
               @click="selectChart('total_volumes')"
             >
-              Volumes
+              Volume
             </b-button>
           </b-button-group>
           <!-- size -->
@@ -106,19 +114,19 @@
             size="sm"
           >
             <b-button
-              :variant="days===1? 'primary': 'outline-primary'"
+              :variant="days===1? 'secondary': 'outline-secondary'"
               @click="selectDays(1)"
             >
               Daily
             </b-button>
             <b-button
-              :variant="days===7? 'primary': 'outline-primary'"
+              :variant="days===7? 'secondary': 'outline-secondary'"
               @click="selectDays(7)"
             >
               Weekly
             </b-button>
             <b-button
-              :variant="days===30? 'primary': 'outline-primary'"
+              :variant="days===30? 'secondary': 'outline-secondary'"
               @click="selectDays(30)"
             >
               Monthly
@@ -126,7 +134,7 @@
           </b-button-group>
         </b-card-header>
 
-        <b-card-body class="pb-0">
+        <b-card-body class="p-0">
           <!-- apex chart -->
           <vue-apex-charts
             type="line"
@@ -141,12 +149,11 @@
       <div v-if="coinInfo.description && coinInfo.description.en">
         {{ coinInfo.description.en || '' }}
       </div>
-      <div class="my-1">
-        LINKS:
+      <div class="mt-1">
         <b-button
           :href="homepage"
           class="mr-1"
-          variant="outline-primary"
+          variant="outline-secondary"
           size="sm"
         >
           <feather-icon icon="CastIcon" /> Webwite
@@ -154,7 +161,7 @@
         <b-button
           :href="twitter"
           class="mr-1"
-          variant="outline-primary"
+          variant="outline-secondary"
           size="sm"
         >
           <feather-icon icon="TwitterIcon" /> Twitter
@@ -162,7 +169,7 @@
         <b-button
           :href="github"
           class="mr-1"
-          variant="outline-primary"
+          variant="outline-secondary"
           size="sm"
         >
           <feather-icon icon="GithubIcon" /> Github
@@ -170,7 +177,7 @@
         <b-button
           :href="telegram"
           class="mr-1"
-          variant="outline-primary"
+          variant="outline-secondary"
           size="sm"
         >
           <feather-icon icon="SendIcon" /> Telegram
@@ -179,8 +186,8 @@
           v-if="coinInfo.links && coinInfo.links.blockchain_site"
           id="dropdown-2"
           size="sm"
-          text="Explorers"
-          variant="outline-primary"
+          text="Block Explorers"
+          variant="outline-secondary"
         >
           <b-dropdown-item
             v-for="site in coinInfo.links.blockchain_site.filter(x => x)"
@@ -196,10 +203,11 @@
 <script>
 import {
   BCard, BCardHeader, BCardTitle, BCardBody, BCardText, BFormRadio, BButton, BButtonGroup, BCol, BRow,
-  BCardFooter, BBadge, VBTooltip, BDropdown, BDropdownItem,
+  BCardFooter, BBadge, VBTooltip, BDropdown, BDropdownItem, BDropdownHeader,
 } from 'bootstrap-vue'
 import VueApexCharts from 'vue-apexcharts'
 import { $themeColors } from '@themeConfig'
+import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 import FeatherIcon from '../../../@core/components/feather-icon/FeatherIcon.vue'
 
 export default {
@@ -219,13 +227,18 @@ export default {
     BBadge,
     BDropdown,
     BDropdownItem,
+    BDropdownHeader,
     FeatherIcon,
+    VuePerfectScrollbar,
   },
   directives: {
     'b-tooltip': VBTooltip,
   },
   data() {
     return {
+      settings: {
+        maxScrollbarLength: 60,
+      },
       colors: {
         green: 'success',
         yellow: 'warning',
@@ -302,12 +315,18 @@ export default {
             },
             formatter(val) {
               if (val > 999999999) {
-                return `${(val / 1000000000).toFixed(1)}b`
+                return `${(val / 1000000000).toFixed()}b`
               }
               if (val > 999999) {
-                return `${(val / 1000000).toFixed(1)}m`
+                return `${(val / 1000000).toFixed()}m`
               }
-              return val > 999 ? `${(val / 1000).toFixed(1)}k` : val.toFixed(2)
+              if (val > 999) {
+                return `${(val / 1000).toFixed()}k`
+              }
+              if (val > 1) {
+                return parseFloat(val.toFixed(3)).toString()
+              }
+              return parseFloat(val.toFixed(6)).toString()
             },
           },
         },
@@ -343,7 +362,7 @@ export default {
     },
     telegram() {
       if (this.coinInfo.links) {
-        return this.coinInfo.links.telegram_channel_identifier ? `https://twitter.com/${this.coinInfo.links.telegram_channel_identifier}` : '#'
+        return this.coinInfo.links.telegram_channel_identifier ? `https://t.me/${this.coinInfo.links.telegram_channel_identifier}` : '#'
       }
       return '#'
     },
@@ -357,6 +376,8 @@ export default {
   created() {
     this.$http.getMarketChart(this.days).then(res => {
       this.marketData = res
+    }).catch(() => {
+      this.marketData = null
     })
     this.$http.getCoinInfo().then(res => {
       if (res) {
@@ -389,3 +410,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.pair-scroll-area {
+  position: relative;
+  margin: auto;
+  /* width: 400px; //*/
+  max-height: 300px;
+}
+</style>

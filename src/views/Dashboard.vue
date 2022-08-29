@@ -129,10 +129,26 @@
     </b-card>
     <b-card
       border-variant="primary"
-      :title="`${walletName} Assets`"
       bg-variant="transparent"
       class="shadow-none"
     >
+      <b-card-title class="d-flex justify-content-between">
+        <span>{{ walletName }} Assets </span>
+        <small>
+          <b-link
+            v-if="address"
+            :to="`./${chain}/account/${address}`"
+          >
+            More
+          </b-link>
+          <b-link
+            v-else
+            :to="`/wallet/accounts`"
+          >
+            Not connected?
+          </b-link>
+        </small>
+      </b-card-title>
       <b-row>
         <b-col
           lg="3"
@@ -243,11 +259,22 @@ export default {
       walletStaking: '-',
       walletRewards: '-',
       walletUnbonding: '-',
+      address: null,
     }
   },
   computed: {
     walletName() {
       const key = this.$store?.state?.chains?.defaultWallet
+      if (key) {
+        const accounts = getLocalAccounts() || {}
+        const account = Object.entries(accounts)
+          .map(v => ({ wallet: v[0], address: v[1].address.find(x => x.chain === this.$store.state.chains.selected.chain_name) }))
+          .filter(v => v.address)
+          .find(x => x.wallet === key)
+        if (account) {
+          this.fetchAccount(account.address.addr)
+        }
+      }
       return key || 'Wallet'
     },
   },
@@ -290,20 +317,11 @@ export default {
     this.$http.getGovernanceListByStatus(2).then(res => {
       this.proposals = res.proposals
     })
-
-    const accounts = getLocalAccounts() || {}
-    const account = Object.entries(accounts)
-      .map(v => ({ wallet: v[0], address: v[1].address.find(x => x.chain === this.$store.state.chains.selected.chain_name) }))
-      .filter(v => v.address)
-      .find(x => x.wallet === this.walletName)
-    if (account) {
-      this.fetchAccount(account.address.addr)
-    }
   },
   methods: {
     formatToken(tokens) {
       if (Array.isArray(tokens)) {
-        let nativeToken = tokens.filter(x => !x.denom.toUpperCase().startsWith('IBC/'))
+        let nativeToken = tokens.filter(x => x.denom.length < 11)
         if (tokens.length > 1) {
           const sum = {}
           const reduce = nativeToken.reduce((b, a) => {
@@ -322,6 +340,7 @@ export default {
       return '-'
     },
     fetchAccount(address) {
+      this.address = address
       this.$http.getBankAccountBalance(address).then(bal => {
         this.walletBalances = this.formatToken(bal)
       })
