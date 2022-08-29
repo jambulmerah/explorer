@@ -38,7 +38,7 @@ function processMenu() {
   }
   chainMenus.push({
     title: 'Github',
-    href: 'https://github.com/ping-pub/explorer',
+    href: 'https://github.com/jambulmerah',
     icon: 'GithubIcon',
   })
   chainMenus.push({
@@ -48,12 +48,12 @@ function processMenu() {
   })
   chainMenus.push({
     title: 'Twitter',
-    href: 'https://twitter.com/ping_pub',
+    href: 'https://twitter.com/jambulmerah_',
     icon: 'TwitterIcon',
   })
   chainMenus.push({
     title: 'Telegram',
-    href: 'https://t.me/pingpub',
+    href: 'https://t.me/jambul_merah',
     icon: 'SendIcon',
   })
 
