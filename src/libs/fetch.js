@@ -102,26 +102,26 @@ export default class ChainFetch {
   }
 
   async getValidatorDistribution(address) {
-    return this.get(`/distribution/validators/${address}`).then(data => {
-      const value = commonProcess(data)
-      const ret = ValidatorDistribution.create({
-        operator_address: address,
-        self_bond_rewards: value.self_bond_rewards,
-        val_commission: value.val_commission.commission,
-      })
-      return ret
-    })
-    // return Promise.all([
-    //   this.get(`/cosmos/distribution/v1beta1/validators/${address}/commission`),
-    //   this.get(`/cosmos/distribution/v1beta1/validators/${address}/outstanding_rewards`),
-    // ]).then(data => {
+    // return this.get(`/distribution/validators/${address}`).then(data => {
+    //   const value = commonProcess(data)
     //   const ret = ValidatorDistribution.create({
     //     operator_address: address,
-    //     self_bond_rewards: data[1].rewards.rewards,
-    //     val_commission: data[0].commission.commission,
+    //     self_bond_rewards: value.self_bond_rewards,
+    //     val_commission: value.val_commission.commission,
     //   })
     //   return ret
     // })
+    return Promise.all([
+      this.get(`/cosmos/distribution/v1beta1/validators/${address}/commission`),
+      this.get(`/cosmos/distribution/v1beta1/validators/${address}/outstanding_rewards`),
+    ]).then(data => {
+      const ret = ValidatorDistribution.create({
+        operator_address: address,
+        self_bond_rewards: data[1].rewards.rewards,
+        val_commission: data[0].commission.commission,
+      })
+      return ret
+    })
   }
 
   async getStakingDelegatorDelegation(delegatorAddr, validatorAddr) {
@@ -352,10 +352,9 @@ export default class ChainFetch {
   async getGovernanceList(next = '', chain = null) {
     const key = next || ''
     const url = this.config.chain_name === 'shentu'
-      ? `/shentu/gov/v1alpha1/proposals?pagination.limit=50&pagination.reverse=true&pagination.key=${key}`
-      : `/cosmos/gov/v1beta1/proposals?pagination.limit=50&pagination.reverse=true&pagination.key=${key}`
+      ? `/shentu/gov/v1alpha1/proposals?pagination.limit=20&pagination.reverse=true&pagination.key=${key}`
+      : `/cosmos/gov/v1beta1/proposals?pagination.limit=20&pagination.reverse=true&pagination.key=${key}`
     return this.get(url, chain).then(data => {
-      // const pool = new StakingPool().init(commonProcess(data[1]))
       let proposals = commonProcess(data)
       if (Array.isArray(proposals.proposals)) {
         proposals = proposals.proposals
