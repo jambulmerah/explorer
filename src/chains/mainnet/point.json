@@ -1,0 +1,19 @@
+{
+    "chain_name": "point-xnet",
+    "coingecko": "",
+    "api": ["https://api-pointxnet.jambulmerah.dev:443"],
+    "rpc": ["http://rpc-pointxnet.jambulmerah.dev:26657"],
+    "snapshot_provider": "",
+    "sdk_version": "0.45.6",
+    "coin_type": "60",
+    "min_tx_fee": "200",
+    "addr_prefix": "evmos",
+    "logo": "https://avatars.githubusercontent.com/u/57636269?s=200&v=4",
+        "assets": [{
+        "base": "apoint",
+        "symbol": "POINT",
+        "exponent": "18",
+        "coingecko_id": "",
+        "logo": "https://avatars.githubusercontent.com/u/57636269?s=200&v=4"
+    }]
+}

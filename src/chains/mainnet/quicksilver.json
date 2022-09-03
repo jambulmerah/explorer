@@ -1,0 +1,19 @@
+{
+    "chain_name": "quicksilver-innuendo-1",
+    "coingecko": "",
+    "api": "https://api-quicksilver.jambulmerah.dev:443",
+    "rpc": "http://rpc-quicksilver.jambulmerah.dev:11657",
+    "snapshot_provider": "",
+    "sdk_version": "0.45.6",
+    "coin_type": "118",
+    "min_tx_fee": "200",
+    "addr_prefix": "quick",
+    "logo": "/logos/quicksilver.png",
+        "assets": [{
+        "base": "uqck",
+        "symbol": "QCK",
+        "exponent": "6",
+        "coingecko_id": "",
+        "logo": "/logos/quicksilver.png"
+    }]
+}

@@ -1,0 +1,19 @@
+{
+    "chain_name": "haqq-testedge",
+    "coingecko": "",
+    "api": ["https://api-haqq.jambulmerah.dev:443"],
+    "rpc": ["http://rpc-haqq.jambulmerah.dev:26657"],
+    "snapshot_provider": "",
+    "sdk_version": "0.45.5",
+    "coin_type": "60",
+    "min_tx_fee": "200",
+    "addr_prefix": "haqq",
+    "logo": "/logos/haqq.png",
+        "assets": [{
+        "base": "aISLM",
+        "symbol": "ISLM",
+        "exponent": "18",
+        "coingecko_id": "",
+        "logo": "/logos/haqq.png"
+    }]
+}
