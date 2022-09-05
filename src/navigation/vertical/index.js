@@ -19,7 +19,7 @@ function processMenu() {
       title: 'blockchains',
       children: blockchains,
       tag: `${blockchains.length}`,
-      icon: 'https://ping.pub/logo.svg',
+      icon: 'https://avatars.githubusercontent.com/u/103844658?s=132',
     })
   }
   chainMenus.push({ header: 'LINKS' })
@@ -31,9 +31,9 @@ function processMenu() {
     })
   } else {
     chainMenus.push({
-      title: 'Testnet Explorer',
-      href: 'http://testnet.ping.pub',
-      icon: 'LifeBuoyIcon',
+      title: 'Webiste',
+      href: 'https://jambulmerah.dev',
+      icon: 'ChromeIcon',
     })
   }
   chainMenus.push({
@@ -43,7 +43,7 @@ function processMenu() {
   })
   chainMenus.push({
     title: 'Discord',
-    href: 'https://discord.gg/CmjYVSr6GW',
+    href: 'https://discordapp.com/users/1014901432480178196',
     icon: 'EyeIcon',
   })
   chainMenus.push({
