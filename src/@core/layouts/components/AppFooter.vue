@@ -7,6 +7,11 @@
         href="#"
         target="_blank"
       >Ping.pub</b-link>
+      <img
+        alt="Ping.pub"
+        src="https://ping.pub/logo.svg"
+        style="width:30px;height:20px"
+      >
     </span>
 
     <router-link

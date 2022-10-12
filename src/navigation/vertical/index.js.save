@@ -32,23 +32,28 @@ function processMenu() {
   } else {
     chainMenus.push({
       title: 'Website',
-      href: 'https://jambulmerah.dev',
+      href: 'https://explorer.jambulmerah.dev/logo.svg',',
       icon: 'LifeBuoyIcon',
     })
   }
   chainMenus.push({
     title: 'Github',
-    href: 'https://github.com/jambulmerah',
+    href: 'https://github.com/ping-pub/explorer',
     icon: 'GithubIcon',
   })
   chainMenus.push({
+    title: 'Discord',
+    href: 'https://discord.gg/CmjYVSr6GW',
+    icon: 'EyeIcon',
+  })
+  chainMenus.push({
     title: 'Twitter',
-    href: 'https://twitter.com/jambul_merah',
+    href: 'https://twitter.com/ping_pub',
     icon: 'TwitterIcon',
   })
   chainMenus.push({
     title: 'Telegram',
-    href: 'https://t.me/jambul_merah',
+    href: 'https://t.me/pingpub',
     icon: 'SendIcon',
   })
 

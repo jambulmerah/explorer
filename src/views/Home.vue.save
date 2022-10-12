@@ -1,4 +1,5 @@
 <template>
+
   <div class="text-center container-lg">
     <full-header />
     <b-link>
@@ -7,10 +8,10 @@
         <h1
           class="text-primary display-4 font-weight-bolder d-none d-md-block"
         >
-	 Explorer.Jambulmerah<small class="flow-left">dev</small>
+          Explorer.Jambulmerah<small class="flow-left">Beta</small>
         </h1>
       </div>
-    </b-link>
+0    </b-link>
 
     <p class="mb-1">
       Jambulmerah Explorer is not just an explorer but also a wallet and more ... 🛠
