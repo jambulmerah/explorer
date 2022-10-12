@@ -43,7 +43,7 @@ function processMenu() {
   })
   chainMenus.push({
     title: 'Twitter',
-    href: 'https://twitter.com/jambul_merah',
+    href: 'https://twitter.com/jambulmerah_',
     icon: 'TwitterIcon',
   })
   chainMenus.push({
