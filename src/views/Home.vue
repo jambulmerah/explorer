@@ -15,7 +15,7 @@
     <p class="mb-1">
       Jambulmerah Explorer is not just an explorer but also a wallet and more ... 🛠
       <br>
-      PoweredBy<b-link
+      Powered By<b-link
         class="ml-25 font-weight-bolder"
         href="https://github.com/ping-pub/explorer"
         target="_NEW"
