@@ -7,7 +7,7 @@
         <h1
           class="text-primary display-4 font-weight-bolder d-none d-md-block"
         >
-          Jambulmerah Explorer<small class="flow-left">Beta</small>
+          Explorer.Jambulmerah<small class="flow-left">.dev</small>
         </h1>
       </div>
     </b-link>
@@ -15,7 +15,7 @@
     <p class="mb-1">
       Jambulmerah Explorer is not just an explorer but also a wallet and more ... 🛠
       <br>
-      PoweredBy<b-link
+      Powered By<b-link
         class="ml-25 font-weight-bolder"
         href="https://github.com/ping-pub/explorer"
         target="_NEW"
