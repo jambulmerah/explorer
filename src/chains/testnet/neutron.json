@@ -2,7 +2,7 @@
     "chain_name": "neutron-testnet",
     "coingecko": "",
     "api": ["https://neutron-testnet-api.jambulmerah.dev"],
-    "api": ["https://neutron-testnet-rpc.jambulmerah.dev"],
+    "rpc": ["https://neutron-testnet-rpc.jambulmerah.dev"],
     "sdk_version": "0.42.4",
     "addr_prefix": "neutron",
     "logo": "/logos/neutron.jpg",

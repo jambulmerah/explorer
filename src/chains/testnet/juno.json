@@ -2,7 +2,7 @@
     "chain_name": "juno-testnet",
     "coingecko": "juno-network",
     "api": ["https://juno-testnet-api.jambulmerah.dev", "https://api.uni.junonetwork.io"],
-    "api": ["https://juno-testnet-rpc.jambulmerah.dev", "https://rpc.uni.junonetwork.io"],
+    "rpc": ["https://juno-testnet-rpc.jambulmerah.dev", "https://rpc.uni.junonetwork.io"],
     "sdk_version": "0.42.4",
     "addr_prefix": "juno",
     "logo": "/logos/juno.jpg",
