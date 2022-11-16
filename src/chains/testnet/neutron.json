@@ -1,0 +1,16 @@
+{
+    "chain_name": "neutron-testnet",
+    "coingecko": "",
+    "api": ["https://neutron-testnet-api.jambulmerah.dev"],
+    "api": ["https://neutron-testnet-rpc.jambulmerah.dev"],
+    "sdk_version": "0.42.4",
+    "addr_prefix": "neutron",
+    "logo": "/logos/neutron.jpg",
+    "assets": [{
+        "base": "untrn",
+        "symbol": "NTRN",
+        "exponent": "6",
+        "coingecko_id": "",
+        "logo": "/logos/neutron.jpg"
+    }]
+}

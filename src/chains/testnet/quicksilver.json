@@ -1,8 +1,8 @@
 {
-    "chain_name": "quicksilver",
+    "chain_name": "quicksilver-testnet",
     "coingecko": "",
-    "api": ["https://quicksilver-testnet-api.polkachu.com"],
-    "rpc": ["https://quicksilver-testnet-rpc.polkachu.com"],
+    "api": ["https://quicksilver-testnet-api.jambulmerah.dev", "https://quicksilver-testnet-api.polkachu.com"],
+    "rpc": ["https://quicksilver-testnet-rpc.jambulmerah.dev", "https://quicksilver-testnet-rpc.polkachu.com"],
     "sdk_version": "0.46.1",
     "coin_type": "118",
     "min_tx_fee": "8000",
