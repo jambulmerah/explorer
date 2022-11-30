@@ -1,0 +1,15 @@
+{
+    "chain_name": "mises",
+    "api": ["https://mises-api.jambulmerah.dev"],
+    "rpc": ["https://mises-rpc.jambulmerah.dev"],
+    "sdk_version": "0.44.6"
+    "addr_prefix": "mises",
+    "logo": "/logos/mises.jpg",
+    "assets": [{
+        "base": "umis",
+        "symbol": "MIS",
+        "exponent": "6",
+        "coingecko_id": "",
+        "logo": "/logos/mises.jpg"
+    }]
+}
