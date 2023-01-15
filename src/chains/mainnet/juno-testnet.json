@@ -1,16 +1,16 @@
 {
     "chain_name": "juno-testnet",
     "coingecko": "juno-network",
-    "api": ["https://juno-testnet-api.jambulmerah.dev", "https://api.uni.junonetwork.io"],
-    "rpc": ["https://juno-testnet-rpc.jambulmerah.dev", "https://rpc.uni.junonetwork.io"],
+    "api": ["https://api.uni.junonetwork.io"],
+    "rpc": ["https://rpc.uni.junonetwork.io"],
     "sdk_version": "0.42.4",
     "addr_prefix": "juno",
     "logo": "/logos/juno.jpg",
     "assets": [{
         "base": "ujuno",
         "symbol": "JUNO",
-        "exponent": "6",
-        "coingecko_id": "juno-network", 
+        "exponent": 6,
+        "coingecko_id": "juno-network",
         "logo": "/logos/juno.jpg"
     }]
 }

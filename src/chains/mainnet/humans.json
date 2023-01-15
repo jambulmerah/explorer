@@ -1,0 +1,19 @@
+{
+    "chain_name": "humans",
+    "coingecko": "",
+    "api": ["https://humans-testnet-api.jambulmerah.dev"],
+    "rpc": ["https://humans-testnet-rpc.jambulmerah.dev"],
+    "sdk_version": "0.46.7",
+    "coin_type": 118,
+    "addr_prefix": "human",
+    "logo": "/logos/humans.png",
+    "assets": [
+      {
+        "base": "uheart",
+        "symbol": "HEART",
+        "exponent": 6,
+        "coingecko_id": "",
+        "logo": "/logos/humans.png"
+      }
+    ]
+  }

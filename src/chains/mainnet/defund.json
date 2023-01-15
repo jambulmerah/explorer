@@ -1,0 +1,19 @@
+{
+    "chain_name": "defund",
+    "coingecko": "",
+    "api": ["https://defund-testnet-api.jambulmerah.dev"],
+    "rpc": ["https://defund-testnet-rpc.jambulmerah.dev"],
+    "sdk_version": "0.46.7",
+    "coin_type": 118,
+    "addr_prefix": "defund",
+    "logo": "/logos/defund.png",
+    "assets": [
+      {
+        "base": "ufetf",
+        "symbol": "FETF",
+        "exponent": 6,
+        "coingecko_id": "",
+        "logo": "/logos/defund.png"
+      }
+    ]
+  }

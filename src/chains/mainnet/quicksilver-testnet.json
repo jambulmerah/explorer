@@ -4,7 +4,7 @@
     "api": ["https://quicksilver-testnet-api.jambulmerah.dev", "https://quicksilver-testnet-api.polkachu.com"],
     "rpc": ["https://quicksilver-testnet-rpc.jambulmerah.dev", "https://quicksilver-testnet-rpc.polkachu.com"],
     "sdk_version": "0.46.4",
-    "coin_type": "118",
+    "coin_type": 118,
     "min_tx_fee": "8000",
     "addr_prefix": "quicksilver",
     "logo": "/logos/quicksilver.png",
@@ -12,7 +12,7 @@
       {
         "base": "uqck",
         "symbol": "QCK",
-        "exponent": "6",
+        "exponent": 6,
         "coingecko_id": "",
         "logo": "/logos/quicksilver.png"
       }

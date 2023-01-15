@@ -1,0 +1,19 @@
+{
+    "chain_name": "lava",
+    "coingecko": "",
+    "api": ["https://lava-testnet-api.jambulmerah.dev"],
+    "rpc": ["https://lava-testnet-rpc.jambulmerah.dev"],
+    "sdk_version": "0.46.7",
+    "coin_type": 118,
+    "addr_prefix": "lava@",
+    "logo": "/logos/lava.svg",
+    "assets": [
+      {
+        "base": "ulava",
+        "symbol": "LAVA",
+        "exponent": 6,
+        "coingecko_id": "",
+        "logo": "/logos/lava.svg"
+      }
+    ]
+  }
