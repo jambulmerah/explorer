@@ -1,19 +1,19 @@
 {
-    "chain_name": "gotabit",
+    "chain_name": "gotabit-testnet",
     "coingecko": "",
     "api": ["https://gotabit-testnet-api.jambulmerah.dev", "https://rest-testnet.gotabit.dev:443"],
     "rpc": ["https://gotabit-testnet-rpc.jambulmerah.dev", "https://rpc-testnet.gotabit.dev:443"],
     "sdk_version": "0.46.7",
     "coin_type": 118,
     "addr_prefix": "gio",
-    "logo": "/logos/gotabit.svg",
+    "logo": "/logos/gotabit.png",
     "assets": [
       {
         "base": "ugtb",
         "symbol": "GTB",
         "exponent": 6,
         "coingecko_id": "",
-        "logo": "/logos/gotabit.svg"
+        "logo": "/logos/gotabit.png"
       }
     ]
   }

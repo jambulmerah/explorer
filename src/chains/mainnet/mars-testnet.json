@@ -1,5 +1,5 @@
 {
-    "chain_name": "mars",
+    "chain_name": "mars-testnet",
     "coingecko": "",
     "api": ["https://mars-testnet-api.jambulmerah.dev"],
     "rpc": ["https://mars-testnet-rpc.jambulmerah.dev"],

@@ -1,0 +1,19 @@
+{
+    "chain_name": "stateset-testnet",
+    "coingecko": "",
+    "api": ["https://rest-api.stateset.zone", "https://stateset-testnet-api.jambulmerah.dev"],
+    "rpc": ["https://rpc.stateset.zone", "https://stateset-testnet-rpc.jambulmerah.dev"],
+    "sdk_version": "0.46.7",
+    "coin_type": 118,
+    "addr_prefix": "stateset",
+    "logo": "/logos/stateset.jpeg",
+    "assets": [
+      {
+        "base": "ustate",
+        "symbol": "STATE",
+        "exponent": 6,
+        "coingecko_id": "",
+        "logo": "/logos/stateset.jpeg"
+      }
+    ]
+  }

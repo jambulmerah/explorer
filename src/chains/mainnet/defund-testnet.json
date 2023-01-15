@@ -1,5 +1,5 @@
 {
-    "chain_name": "defund",
+    "chain_name": "defund-testnet",
     "coingecko": "",
     "api": ["https://defund-testnet-api.jambulmerah.dev"],
     "rpc": ["https://defund-testnet-rpc.jambulmerah.dev"],
