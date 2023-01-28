@@ -1,0 +1,19 @@
+{
+    "chain_name": "planq",
+    "api": ["https://planq-api.jambulmerah.dev", "https://rest.planq.network"],
+    "rpc": ["https://planq-rpc.jambulmerah.dev", "https://rpc.planq.network"],
+    "snapshot_provider": "10dc0da8ce86635a4c4dbdfa8ff305c564c5e096@planq-peer.jambulmerah.dev:14656",
+    "sdk_version": "0.46.3",
+    "coin_type": 60,
+    "min_tx_fee": "5000000000000000",
+    "addr_prefix": "plq",
+    "logo": "/logos/planq.png",
+    "keplr_features": ["ibc-transfer", "ibc-go", "eth-address-gen", "eth-key-sign"],
+    "assets": [{
+        "base": "aplanq",
+        "symbol": "planq",
+        "exponent": 18,
+        "coingecko_id": "",
+        "logo": "/logos/planq.png"
+    }]
+}
